@@ -12,11 +12,9 @@ export { LinearizedPriceDataSource } from './ts/LinearizedPriceDataSource';
 export { MovingAverageOracle } from './ts/MovingAverageOracle';
 export { MovingAverageOracleV1Proxy } from './ts/MovingAverageOracleV1Proxy';
 export { MovingAverageOracleV2 } from './ts/MovingAverageOracleV2';
-export { MovingAverageCrossoverTrigger } from './ts/MovingAverageCrossoverTrigger';
 export { OracleProxy } from './ts/OracleProxy';
 export { PriceFeed } from './ts/PriceFeed';
 export { RSIOracle } from './ts/RSIOracle';
-export { RSITrendingTrigger } from './ts/RSITrendingTrigger';
 export { TimeSeriesFeed } from './ts/TimeSeriesFeed';
 export { TwoAssetLinearizedTimeSeriesFeed } from './ts/TwoAssetLinearizedTimeSeriesFeed';
 
@@ -38,11 +36,9 @@ export {
 	MovingAverageOracleContract,
 	MovingAverageOracleV1ProxyContract,
 	MovingAverageOracleV2Contract,
-	MovingAverageCrossoverTriggerContract,
 	OracleProxyContract,
 	PriceFeedContract,
 	RSIOracleContract,
-	RSITrendingTriggerContract,
 	TimeSeriesFeedContract,
 	TwoAssetLinearizedTimeSeriesFeedContract,
 } from "../utils/contracts";

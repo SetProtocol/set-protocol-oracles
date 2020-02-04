@@ -8,7 +8,6 @@ import {
   LinkedListLibraryMockV2Contract,
   LinkedListLibraryMockV3Contract,
   PriceFeedMockContract,
-  UintArrayUtilsLibraryMockContract,
 } from '../contracts';
 import {
   getContractInstance,
@@ -23,8 +22,6 @@ const LinkedListLibraryMockV3 = artifacts.require('LinkedListLibraryMockV3');
 const EMALibraryMock = artifacts.require('EMALibraryMock');
 const PriceFeedMock = artifacts.require('PriceFeedMock');
 const RSILibraryMock = artifacts.require('RSILibraryMock');
-const UintArrayUtilsLibrary = artifacts.require('UintArrayUtilsLibrary');
-const UintArrayUtilsLibraryMock = artifacts.require('UintArrayUtilsLibraryMock');
 
 export class LibraryMockHelper {
   private _contractOwnerAddress: Address;
@@ -126,28 +123,4 @@ export class LibraryMockHelper {
       txnFrom(from),
     );
   }
-
-  public async deployUintArrayUtilsLibraryAsync(
-    from: Address = this._contractOwnerAddress
-  ): Promise<UintArrayUtilsLibraryMockContract> {
-    await this.linkUintArrayUtilsLibraryAsync(UintArrayUtilsLibraryMock);
-
-    const mathHelperMockContract = await UintArrayUtilsLibraryMock.new(txnFrom(from));
-
-    return new UintArrayUtilsLibraryMockContract(
-      getContractInstance(mathHelperMockContract),
-      txnFrom(from),
-    );
-  }
-
-  public async linkUintArrayUtilsLibraryAsync(
-    contract: any,
-  ): Promise<void> {
-    const truffleUintArrayUtilsLibrary = await UintArrayUtilsLibrary.new(
-      { from: this._contractOwnerAddress },
-    );
-
-    await contract.link('UintArrayUtilsLibrary', truffleUintArrayUtilsLibrary.address);
-  }
-
 }
