@@ -24,6 +24,7 @@ import {
   MovingAverageOracleV2Contract,
   OracleProxyCallerContract,
   OracleProxyContract,
+  OracleWhiteListV2Contract,
   PriceFeedContract,
   RSIOracleContract,
   TimeSeriesFeedContract,
@@ -58,6 +59,7 @@ const MovingAverageOracleV1Proxy = artifacts.require('MovingAverageOracleV1Proxy
 const MovingAverageOracleV2 = artifacts.require('MovingAverageOracleV2');
 const OracleProxy = artifacts.require('OracleProxy');
 const OracleProxyCaller = artifacts.require('OracleProxyCaller');
+const OracleWhiteListV2 = artifacts.require('OracleWhiteListV2');
 const RSIOracle = artifacts.require('RSIOracle');
 const TimeSeriesFeed = artifacts.require('TimeSeriesFeed');
 const TimeSeriesFeedV2Mock = artifacts.require('TimeSeriesFeedV2Mock');
@@ -78,6 +80,23 @@ export class OracleHelper {
   }
 
   /* ============ Deployment ============ */
+
+  public async deployOracleWhiteListV2Async(
+    initialTokenAddresses: Address[] = [],
+    initialOracleAddresses: Address[] = [],
+    from: Address = this._contractOwnerAddress
+  ): Promise<OracleWhiteListV2Contract> {
+    const truffleWhiteList = await OracleWhiteListV2.new(
+      initialTokenAddresses,
+      initialOracleAddresses,
+      { from },
+    );
+
+    return new OracleWhiteListV2Contract(
+      getContractInstance(truffleWhiteList),
+      { from, gas: DEFAULT_GAS },
+    );
+  }
 
   public async deployFeedFactoryAsync(
     from: Address = this._contractOwnerAddress

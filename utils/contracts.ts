@@ -23,6 +23,7 @@ export { MovingAverageOracleV2Contract } from '../types/generated/moving_average
 export { MovingAverageOracleV1ProxyContract } from '../types/generated/moving_average_oracle_v1_proxy';
 export { OracleProxyCallerContract } from '../types/generated/oracle_proxy_caller';
 export { OracleProxyContract } from '../types/generated/oracle_proxy';
+export { OracleWhiteListV2Contract } from '../types/generated/oracle_white_list_v2';
 export { PriceFeedContract } from '../types/generated/price_feed';
 export { PriceFeedMockContract } from '../types/generated/price_feed_mock';
 export { RSILibraryMockContract } from '../types/generated/r_s_i_library_mock';
