@@ -18,6 +18,7 @@ export { LinkedListLibraryMockV2Contract } from '../types/generated/linked_list_
 export { LinkedListLibraryMockV3Contract } from '../types/generated/linked_list_library_mock_v3';
 export { LinearizedEMATimeSeriesFeedContract } from '../types/generated/linearized_e_m_a_time_series_feed';
 export { LinearizedPriceDataSourceContract } from '../types/generated/linearized_price_data_source';
+export { MedianContract } from '../types/generated/median';
 export { MovingAverageOracleContract } from '../types/generated/moving_average_oracle';
 export { MovingAverageOracleV2Contract } from '../types/generated/moving_average_oracle_v2';
 export { MovingAverageOracleV1ProxyContract } from '../types/generated/moving_average_oracle_v1_proxy';
@@ -31,4 +32,5 @@ export { TimeSeriesFeedContract } from '../types/generated/time_series_feed';
 export { TimeSeriesFeedV2Contract } from '../types/generated/time_series_feed_v2';
 export { TimeSeriesFeedV2MockContract } from '../types/generated/time_series_feed_v2_mock';
 export { TwoAssetLinearizedTimeSeriesFeedContract } from '../types/generated/two_asset_linearized_time_series_feed';
+export { UpdatableOracleMockContract } from '../types/generated/updatable_oracle_mock';
 export { USDCMockContract } from '../types/generated/u_s_d_c_mock';

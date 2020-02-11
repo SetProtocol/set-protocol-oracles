@@ -9,6 +9,7 @@ export { TwoAssetRatioOracle } from './ts/TwoAssetRatioOracle';
 export { LegacyMakerOracleAdapter } from './ts/LegacyMakerOracleAdapter';
 export { LinearizedEMATimeSeriesFeed } from './ts/LinearizedEMATimeSeriesFeed';
 export { LinearizedPriceDataSource } from './ts/LinearizedPriceDataSource';
+export { Median } from './ts/Median';
 export { MovingAverageOracle } from './ts/MovingAverageOracle';
 export { MovingAverageOracleV1Proxy } from './ts/MovingAverageOracleV1Proxy';
 export { MovingAverageOracleV2 } from './ts/MovingAverageOracleV2';
@@ -16,7 +17,9 @@ export { OracleProxy } from './ts/OracleProxy';
 export { PriceFeed } from './ts/PriceFeed';
 export { RSIOracle } from './ts/RSIOracle';
 export { TimeSeriesFeed } from './ts/TimeSeriesFeed';
+export { TimeSeriesFeedV2 } from './ts/TimeSeriesFeedV2';
 export { TwoAssetLinearizedTimeSeriesFeed } from './ts/TwoAssetLinearizedTimeSeriesFeed';
+export { UpdatableOracleMock } from './ts/UpdatableOracleMock';
 
 // Export abi-gen contract wrappers
 export {
@@ -33,6 +36,7 @@ export {
 	LinkedListLibraryMockContract,
 	LinearizedEMATimeSeriesFeedContract,
 	LinearizedPriceDataSourceContract,
+	MedianContract,
 	MovingAverageOracleContract,
 	MovingAverageOracleV1ProxyContract,
 	MovingAverageOracleV2Contract,
@@ -40,5 +44,7 @@ export {
 	PriceFeedContract,
 	RSIOracleContract,
 	TimeSeriesFeedContract,
+	TimeSeriesFeedV2Contract,
 	TwoAssetLinearizedTimeSeriesFeedContract,
+	UpdatableOracleMockContract
 } from "../utils/contracts";

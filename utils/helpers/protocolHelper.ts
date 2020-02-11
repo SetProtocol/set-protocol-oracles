@@ -1,5 +1,4 @@
 import * as _ from 'lodash';
-import * as setProtocolUtils from 'set-protocol-utils';
 import { Address } from 'set-protocol-utils';
 
 import {
@@ -10,23 +9,14 @@ import {
   WhiteList,
   WhiteListContract,
 } from 'set-protocol-contracts';
-import { BigNumber } from 'bignumber.js';
 
 import {
   DEFAULT_GAS,
-  DEFAULT_UNIT_SHARES,
-  DEFAULT_REBALANCING_MAXIMUM_NATURAL_UNIT,
-  DEFAULT_REBALANCING_MINIMUM_NATURAL_UNIT,
-  DEFAULT_REBALANCING_NATURAL_UNIT,
-  ONE_DAY_IN_SECONDS,
 } from '../constants';
 import { getWeb3 } from '../web3Helper';
 import { getDeployedAddress } from '../snapshotUtils';
 
 const web3 = getWeb3();
-
-const { SetProtocolTestUtils: SetTestUtils, SetProtocolUtils: SetUtils } = setProtocolUtils;
-const setTestUtils = new SetTestUtils(web3);
 
 
 export class ProtocolHelper {
