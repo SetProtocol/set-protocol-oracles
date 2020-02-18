@@ -1,9 +1,11 @@
 export { BaseContract } from '../types/base_contract';
+export { ChainlinkAggregatorMockContract } from '../types/generated/chainlink_aggregator_mock';
+export { ChainlinkOracleAdapterContract } from '../types/generated/chainlink_oracle_adapter';
+export { ConstantPriceOracleContract } from '../types/generated/constant_price_oracle';
+export { CTokenOracleContract } from '../types/generated/c_token_oracle';
 export {
   DataSourceLinearInterpolationLibraryMockContract
 } from '../types/generated/data_source_linear_interpolation_library_mock';
-export { ConstantPriceOracleContract } from '../types/generated/constant_price_oracle';
-export { CTokenOracleContract } from '../types/generated/c_token_oracle';
 export { DydxConstantPriceOracleMockContract } from '../types/generated/dydx_constant_price_oracle_mock';
 export { DydxOracleAdapterContract } from '../types/generated/dydx_oracle_adapter';
 export { EMALibraryMockContract } from '../types/generated/e_m_a_library_mock';
