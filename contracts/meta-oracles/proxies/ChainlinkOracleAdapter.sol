@@ -18,7 +18,6 @@ pragma solidity 0.5.7;
 
 import { SafeMath } from "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import { AggregatorInterface } from "chainlink/v0.5/contracts/dev/AggregatorInterface.sol";
-import { IOracle } from "set-protocol-strategies/contracts/meta-oracles/interfaces/IOracle.sol";
 
 
 /**
