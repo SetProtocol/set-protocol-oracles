@@ -1,3 +1,4 @@
+export { ChainlinkAggregatorMock } from './ts/ChainlinkAggregatorMock';
 export { ChainlinkOracleAdapter } from './ts/ChainlinkOracleAdapter';
 export { ConstantPriceOracle } from './ts/ConstantPriceOracle';
 export { CTokenOracle } from './ts/CTokenOracle';
@@ -25,6 +26,7 @@ export { UpdatableOracleMock } from './ts/UpdatableOracleMock';
 // Export abi-gen contract wrappers
 export {
 	BaseContract,
+	ChainlinkAggregatorMockContract,
 	ChainlinkOracleAdapterContract,
 	ConstantPriceOracleContract,
 	CTokenOracleContract,
