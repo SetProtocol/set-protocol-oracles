@@ -8,6 +8,8 @@ import { Blockchain } from '@utils/blockchain';
 import { ether } from '@utils/units';
 
 import {
+  ChainlinkAggregatorMockContract,
+  ChainlinkOracleAdapterContract,
   ConstantPriceOracleContract,
   CTokenOracleContract,
   DydxConstantPriceOracleMockContract,
@@ -41,6 +43,8 @@ import { FeedCreatedArgs } from '../contract_logs/oracle';
 
 const web3 = getWeb3();
 
+const ChainlinkAggregatorMock = artifacts.require('ChainlinkAggregatorMock');
+const ChainlinkOracleAdapter = artifacts.require('ChainlinkOracleAdapter');
 const ConstantPriceOracle = artifacts.require('ConstantPriceOracle');
 const CTokenOracle = artifacts.require('CTokenOracle');
 const DydxConstantPriceOracleMock = artifacts.require('DydxConstantPriceOracleMock');
@@ -477,6 +481,36 @@ export class OracleHelper {
 
     return new DydxConstantPriceOracleMockContract(
       getContractInstance(dydxConstantPriceOracleMock),
+      txnFrom(from),
+    );
+  }
+
+  public async deployChainlinkOracleAdapterAsync(
+    oracle: Address,
+    from: Address = this._contractOwnerAddress
+  ): Promise<ChainlinkOracleAdapterContract> {
+    const oracleAdapter = await ChainlinkOracleAdapter.new(
+      oracle,
+      txnFrom(from),
+    );
+
+    return new ChainlinkOracleAdapterContract(
+      getContractInstance(oracleAdapter),
+      txnFrom(from),
+    );
+  }
+
+  public async deployChainlinkAggregatorMockAsync(
+    oracleValue: BigNumber,
+    from: Address = this._contractOwnerAddress
+  ): Promise<ChainlinkAggregatorMockContract> {
+    const oracleAMock = await ChainlinkAggregatorMock.new(
+      oracleValue,
+      txnFrom(from),
+    );
+
+    return new ChainlinkAggregatorMockContract(
+      getContractInstance(oracleAMock),
       txnFrom(from),
     );
   }
