@@ -55,7 +55,7 @@ contract('chainlinkOracleAdapter', accounts => {
     blockchain.revertAsync();
   });
 
-  describe.only('#constructor', async () => {
+  describe('#constructor', async () => {
     let subjectChainlinkOracleAddress: Address;
 
     beforeEach(async () => {
@@ -77,7 +77,7 @@ contract('chainlinkOracleAdapter', accounts => {
     });
   });
 
-  describe.only('#read', async () => {
+  describe('#read', async () => {
     beforeEach(async () => {
       chainlinkOracleAdapter = await oracleHelper.deployChainlinkOracleAdapterAsync(
         chainlinkAggregatorMock.address,
