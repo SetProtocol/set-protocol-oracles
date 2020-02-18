@@ -27,7 +27,7 @@ import { IOracle } from "set-protocol-strategies/contracts/meta-oracles/interfac
  *
  * Coerces outputs from Chainlink oracles to uint256 and adapts value to 18 decimals.
  */
-contract ChainlinkOracleAdapter is IOracle {
+contract ChainlinkOracleAdapter {
     using SafeMath for uint256;
 
     /* ============ Constants ============ */
