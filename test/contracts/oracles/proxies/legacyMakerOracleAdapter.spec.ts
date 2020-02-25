@@ -12,9 +12,9 @@ import { BigNumberSetup } from '@utils/bigNumberSetup';
 import { Blockchain } from '@utils/blockchain';
 import { ether } from '@utils/units';
 
-import { MedianContract } from 'set-protocol-contracts';
 import {
   LegacyMakerOracleAdapterContract,
+  MedianContract
 } from '@utils/contracts';
 
 import { getWeb3 } from '@utils/web3Helper';

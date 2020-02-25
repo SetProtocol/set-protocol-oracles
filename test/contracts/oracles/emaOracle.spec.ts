@@ -12,11 +12,11 @@ import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
 import { Blockchain } from '@utils/blockchain';
 import { ether } from '@utils/units';
-import { MedianContract } from 'set-protocol-contracts';
 import {
+  EMAOracleContract,
   LegacyMakerOracleAdapterContract,
   LinearizedEMATimeSeriesFeedContract,
-  EMAOracleContract,
+  MedianContract,
   OracleProxyContract
 } from '@utils/contracts';
 import { NULL_ADDRESS, DEFAULT_GAS } from '@utils/constants';
