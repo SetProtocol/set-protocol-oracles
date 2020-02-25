@@ -52,3 +52,7 @@ export {
 	TwoAssetLinearizedTimeSeriesFeedContract,
 	UpdatableOracleMockContract
 } from "../utils/contracts";
+
+export {
+	OracleHelper
+} from "../utils/helpers/oracleHelper";
