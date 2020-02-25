@@ -12,9 +12,9 @@ import { BigNumberSetup } from '@utils/bigNumberSetup';
 import { Blockchain } from '@utils/blockchain';
 import { ether } from '@utils/units';
 
-import { MedianContract } from 'set-protocol-contracts';
 import {
   LegacyMakerOracleAdapterContract,
+  MedianContract,
   OracleProxyCallerContract,
   OracleProxyContract,
 } from '@utils/contracts';

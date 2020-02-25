@@ -9,9 +9,9 @@ import { BigNumber } from 'bignumber.js';
 import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
 import { Blockchain } from '@utils/blockchain';
-import { MedianContract } from 'set-protocol-contracts';
 import {
   HistoricalPriceFeedContract,
+  MedianContract,
   MovingAverageOracleContract,
 } from '@utils/contracts';
 import { ONE_DAY_IN_SECONDS } from '@utils/constants';
