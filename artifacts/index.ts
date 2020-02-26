@@ -16,10 +16,12 @@ export { MovingAverageOracle } from './ts/MovingAverageOracle';
 export { MovingAverageOracleV1Proxy } from './ts/MovingAverageOracleV1Proxy';
 export { MovingAverageOracleV2 } from './ts/MovingAverageOracleV2';
 export { OracleProxy } from './ts/OracleProxy';
+export { OracleProxyCaller } from './ts/OracleProxyCaller';
 export { PriceFeed } from './ts/PriceFeed';
 export { RSIOracle } from './ts/RSIOracle';
 export { TimeSeriesFeed } from './ts/TimeSeriesFeed';
 export { TimeSeriesFeedV2 } from './ts/TimeSeriesFeedV2';
+export { TimeSeriesFeedV2Mock } from './ts/TimeSeriesFeedV2Mock';
 export { TwoAssetLinearizedTimeSeriesFeed } from './ts/TwoAssetLinearizedTimeSeriesFeed';
 export { UpdatableOracleMock } from './ts/UpdatableOracleMock';
 
@@ -45,10 +47,12 @@ export {
 	MovingAverageOracleV1ProxyContract,
 	MovingAverageOracleV2Contract,
 	OracleProxyContract,
+	OracleProxyCallerContract,
 	PriceFeedContract,
 	RSIOracleContract,
 	TimeSeriesFeedContract,
 	TimeSeriesFeedV2Contract,
+	TimeSeriesFeedV2MockContract,
 	TwoAssetLinearizedTimeSeriesFeedContract,
 	UpdatableOracleMockContract
 } from "../utils/contracts";
