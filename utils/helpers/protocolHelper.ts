@@ -2,13 +2,16 @@ import * as _ from 'lodash';
 import { Address } from 'set-protocol-utils';
 
 import {
-  MedianContract,
   OracleWhiteList,
   StandardTokenMockContract,
   WethMockContract,
   WhiteList,
   WhiteListContract,
 } from 'set-protocol-contracts';
+
+import {
+  MedianContract
+} from '../contracts';
 
 import {
   DEFAULT_GAS,

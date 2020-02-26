@@ -3,8 +3,8 @@ import * as setProtocolUtils from 'set-protocol-utils';
 import { Address } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
 
-import { Blockchain } from '@utils/blockchain';
-import { ether } from '@utils/units';
+import { Blockchain } from 'set-protocol-contracts';
+import { ether } from '../units';
 
 import {
   ChainlinkAggregatorMockContract,
@@ -37,7 +37,7 @@ import {
   DEFAULT_GAS,
   ONE_DAY_IN_SECONDS,
   ONE_HOUR_IN_SECONDS,
-} from '@utils/constants';
+} from '../constants';
 import { getWeb3, getContractInstance, txnFrom } from '../web3Helper';
 import { FeedCreatedArgs } from '../contract_logs/oracle';
 

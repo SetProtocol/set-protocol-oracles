@@ -9,7 +9,7 @@ import { BigNumberSetup } from '@utils/bigNumberSetup';
 import {
   LinkedListLibraryMockV3Contract,
 } from '@utils/contracts';
-import { Blockchain } from '@utils/blockchain';
+import { Blockchain } from 'set-protocol-contracts';
 import { ether } from '@utils/units';
 import {
   ZERO,

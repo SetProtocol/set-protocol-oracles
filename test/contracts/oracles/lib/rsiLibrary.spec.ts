@@ -9,7 +9,7 @@ import { BigNumberSetup } from '@utils/bigNumberSetup';
 import {
   RSILibraryMockContract,
 } from '@utils/contracts';
-import { Blockchain } from '@utils/blockchain';
+import { Blockchain } from 'set-protocol-contracts';
 import { ZERO } from '@utils/constants';
 import { expectRevertError } from '@utils/tokenAssertions';
 import { ether } from '@utils/units';
