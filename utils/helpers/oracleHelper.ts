@@ -31,7 +31,8 @@ import {
   TimeSeriesFeedContract,
   TimeSeriesFeedV2Contract,
   TimeSeriesFeedV2MockContract,
-  TwoAssetLinearizedTimeSeriesFeedContract
+  TwoAssetLinearizedTimeSeriesFeedContract,
+  UpdatableOracleMockContract,
 } from '../contracts';
 import {
   DEFAULT_GAS,
@@ -66,6 +67,7 @@ const RSIOracle = importArtifactsFromSource('RSIOracle');
 const TimeSeriesFeed = importArtifactsFromSource('TimeSeriesFeed');
 const TimeSeriesFeedV2Mock = importArtifactsFromSource('TimeSeriesFeedV2Mock');
 const TwoAssetLinearizedTimeSeriesFeed = importArtifactsFromSource('TwoAssetLinearizedTimeSeriesFeed');
+const UpdatableOracleMock = importArtifactsFromSource('UpdatableOracleMock');
 
 const { SetProtocolTestUtils: SetTestUtils, SetProtocolUtils: SetUtils } = setProtocolUtils;
 const setTestUtils = new SetTestUtils(web3);
@@ -82,6 +84,49 @@ export class OracleHelper {
   }
 
   /* ============ Deployment ============ */
+
+  public async deployUpdatableOracleMocksAsync(
+    startingPrices: BigNumber[],
+    from: Address = this._contractOwnerAddress
+  ): Promise<UpdatableOracleMockContract[]> {
+    const mockOracles: UpdatableOracleMockContract[] = [];
+    const oraclePromises = _.map(startingPrices, async price => {
+      return await UpdatableOracleMock.new(
+        price,
+        txnFrom(from)
+      );
+    });
+
+    await Promise.all(oraclePromises).then(oracles => {
+      _.each(oracles, oracleMock => {
+        mockOracles.push(new UpdatableOracleMockContract(
+          new web3.eth.Contract(oracleMock.abi, oracleMock.address),
+          txnFrom(from)
+        ));
+      });
+    });
+
+    return mockOracles;
+  }
+
+  public async deployUpdatableOracleMockAsync(
+    price: BigNumber,
+    from: Address = this._contractOwnerAddress
+  ): Promise<UpdatableOracleMockContract> {
+    const oracleMock = await UpdatableOracleMock.new(price, txnFrom(from));
+
+    return new UpdatableOracleMockContract(getContractInstance(oracleMock), txnFrom(from));
+  }
+
+  public getUpdatableOracleMockInstance(
+     oracleAddress: Address,
+     from: Address = this._contractOwnerAddress,
+  ): UpdatableOracleMockContract {
+    return new UpdatableOracleMockContract(
+      getContractInstance(UpdatableOracleMock, oracleAddress),
+      { from, gas: DEFAULT_GAS },
+    );
+  }
 
   public async deployFeedFactoryAsync(
     from: Address = this._contractOwnerAddress
