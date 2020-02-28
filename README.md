@@ -7,7 +7,7 @@
   <a href='https://coveralls.io/github/SetProtocol/set-protocol-oracles'>
     <img src='https://coveralls.io/repos/github/SetProtocol/set-protocol-oracles/badge.svg?branch=master' alt='Coverage Status' />
   </a>
-  <a href='https://github.com/SetProtocol/set-protocol-contracts/blob/master/LICENSE'>
+  <a href='https://github.com/SetProtocol/set-protocol-oracles/blob/master/LICENSE'>
     <img src='https://img.shields.io/github/license/SetProtocol/set-protocol-oracles.svg' alt='License' />
   </a>
   <a href='https://www.npmjs.com/package/set-protocol-oracles'>
