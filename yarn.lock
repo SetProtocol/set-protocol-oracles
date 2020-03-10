@@ -6612,10 +6612,10 @@ set-protocol-contracts@^1.3.32-beta:
     web3-utils "1.0.0-beta.36"
     zos-lib "^2.4.2"
 
-set-protocol-contracts@^1.3.43-beta:
-  version "1.3.43-beta"
-  resolved "https://registry.yarnpkg.com/set-protocol-contracts/-/set-protocol-contracts-1.3.43-beta.tgz#c44c6fc77414b4237da3cbbe2ebad2482dd2528d"
-  integrity sha512-MmnSskn+ovnGqMgI50Xg9q6IXshX7WnZA2iSgoFAZqF6kjdQN4u72l2G7P/R07Lnx1pr/0BXOpZAjTl7OPwhzg==
+set-protocol-contracts@^1.3.47-beta:
+  version "1.3.47-beta"
+  resolved "https://registry.yarnpkg.com/set-protocol-contracts/-/set-protocol-contracts-1.3.47-beta.tgz#182e53583494cfc85d8af96fcf65f827e733806f"
+  integrity sha512-3dejj/bDU4Szz+p/N8ldSldD5cDR9VtgzCwU7z1B3S9FI5uTBG0y2mh4qjdY9L3EU8mw2pHwR7fzFklzUDl9fA==
   dependencies:
     bn-chai "^1.0.1"
     canonical-weth "^1.3.1"

@@ -1,5 +1,6 @@
 const Web3 = require('web3'); // import web3 v1.0 constructor
 const BigNumber = require('bignumber.js');
+import { version } from '../package.json';
 import { DEFAULT_GAS, NULL_ADDRESS } from './constants';
 
 const contract = require('@truffle/contract');
@@ -49,11 +50,23 @@ export const importArtifactsFromSource = (contractName: string) => {
   let instance;
   try {
     instance = artifacts.require(contractName);
-  } catch (e) {
+    return instance;
+  } catch (e) {}
+
+  try {
     const data = require('set-protocol-oracles/build/contracts/' + contractName + '.json');
     instance = contract(data);
     instance.setProvider(web3.currentProvider);
-  }
 
-  return instance;
+    return instance;
+  } catch (e) {}
+
+  try {
+    const filePath = 'set-protocol-oracles-' + version + '/build/contracts/' + contractName + '.json';
+    const data = require(filePath);
+    instance = contract(data);
+    instance.setProvider(web3.currentProvider);
+
+    return instance;
+  } catch (e) {}
 };
