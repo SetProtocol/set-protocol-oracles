@@ -18,7 +18,7 @@ pragma solidity 0.5.7;
 pragma experimental "ABIEncoderV2";
 
 import { SafeMath } from "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import { TimeLockUpgradeV2 } from "set-protocol-contracts/contracts/lib/TimeLockUpgradeV2.sol";
+import { TimeLockUpgradeV2 } from "../../external/SetProtocolContracts/lib/TimeLockUpgradeV2.sol";
 
 import { DataSourceLinearInterpolationLibrary } from "../lib/DataSourceLinearInterpolationLibrary.sol";
 import { IOracle } from "../interfaces/IOracle.sol";
@@ -44,7 +44,7 @@ contract TwoAssetLinearizedTimeSeriesFeed is
     /* ============ State Variables ============ */
 
     // Amount of time after which read interpolates price result, in seconds
-    uint256 public interpolationThreshold; 
+    uint256 public interpolationThreshold;
     string public dataDescription;
     IOracle public baseOracleInstance;
     IOracle public quoteOracleInstance;

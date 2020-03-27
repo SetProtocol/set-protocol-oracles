@@ -3,12 +3,9 @@ import { Address } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
 
 import {
+  USDCMockContract,
   StandardTokenMockContract,
   WethMockContract,
-} from 'set-protocol-contracts';
-
-import {
-  USDCMockContract,
 } from '../contracts';
 
 import {

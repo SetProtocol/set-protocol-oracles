@@ -4,12 +4,12 @@ import * as _ from 'lodash';
 import * as chai from 'chai';
 import { BigNumber } from 'bignumber.js';
 
+import { Blockchain } from 'set-protocol-utils';
 import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
 import {
   LinkedListLibraryMockV2Contract,
 } from '@utils/contracts';
-import { Blockchain } from 'set-protocol-contracts';
 import { ether } from '@utils/units';
 import {
   ZERO,

@@ -6,9 +6,9 @@ import * as setProtocolUtils from 'set-protocol-utils';
 
 import { BigNumber } from 'bignumber.js';
 
+import { Blockchain } from 'set-protocol-utils';
 import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
-import { Blockchain } from 'set-protocol-contracts';
 import {
   HistoricalPriceFeedContract,
   MedianContract,
