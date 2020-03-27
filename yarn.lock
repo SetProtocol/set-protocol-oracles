@@ -495,13 +495,6 @@
     "@types/bn.js" "*"
     "@types/underscore" "*"
 
-"@types/web3@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@types/web3/-/web3-1.0.10.tgz#04e8ffe62746de76001b00329b3908fc8c1fc117"
-  dependencies:
-    "@types/bn.js" "*"
-    "@types/underscore" "*"
-
 "@web3-js/scrypt-shim@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@web3-js/scrypt-shim/-/scrypt-shim-0.1.0.tgz#0bf7529ab6788311d3e07586f7d89107c3bea2cc"
@@ -6357,10 +6350,10 @@ set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
-set-protocol-utils@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/set-protocol-utils/-/set-protocol-utils-1.1.1.tgz#ffbd656b60573c2a7d6a85628effb753a6248208"
-  integrity sha512-PCnJj18W25OtP553vb2YURNyllh6qbLA9i4czxkxrbHGOxUgaXDdRl6rCXc5v0tMIMQxfTbcb4Ow/VoR00lr2w==
+set-protocol-utils@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/set-protocol-utils/-/set-protocol-utils-1.1.2.tgz#02d2fabb30bb1be741bad9aede3a058f56a7301d"
+  integrity sha512-f5vPFbygm3h2ctnc6g/iH3RBqKQsq85M0HGaUxmaz0PkkPPUUjRXv/1Rwu3pDqyLobTVTNBxINWzu0ZgiUEUsg==
   dependencies:
     "@0xproject/base-contract" "^1.0.4"
     "@0xproject/order-utils" "^1.0.1"
@@ -6368,7 +6361,7 @@ set-protocol-utils@^1.1.1:
     "@0xproject/web3-wrapper" "^1.1.2"
     "@types/lodash" "4.14.104"
     "@types/node" "^8.9.1"
-    "@types/web3" "^1.0.10"
+    "@types/web3" "1.0.20"
     abi-decoder "^1.0.9"
     bignumber.js "~4.1.0"
     bn-chai "^1.0.1"
