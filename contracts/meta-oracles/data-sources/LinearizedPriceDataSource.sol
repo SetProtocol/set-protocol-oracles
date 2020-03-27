@@ -18,7 +18,7 @@ pragma solidity 0.5.7;
 pragma experimental "ABIEncoderV2";
 
 import { SafeMath } from "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import { TimeLockUpgrade } from "set-protocol-contracts/contracts/lib/TimeLockUpgrade.sol";
+import { TimeLockUpgrade } from "../../external/SetProtocolContracts/lib/TimeLockUpgrade.sol";
 
 import { DataSourceLinearInterpolationLibrary } from "../lib/DataSourceLinearInterpolationLibrary.sol";
 import { IOracle } from "../interfaces/IOracle.sol";
@@ -45,7 +45,7 @@ contract LinearizedPriceDataSource is
 
     /* ============ State Variables ============ */
     // Amount of time after which read interpolates price result, in seconds
-    uint256 public interpolationThreshold; 
+    uint256 public interpolationThreshold;
     string public dataDescription;
     IOracle public oracleInstance;
 
@@ -123,7 +123,7 @@ contract LinearizedPriceDataSource is
                 oracleValue,
                 _timeSeriesState.updateInterval,
                 timeFromExpectedUpdate,
-                mostRecentPrice                
+                mostRecentPrice
             );
         }
     }

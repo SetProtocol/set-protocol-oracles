@@ -18,7 +18,7 @@ pragma solidity 0.5.7;
 pragma experimental "ABIEncoderV2";
 
 import { SafeMath } from "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import { TimeLockUpgrade } from "set-protocol-contracts/contracts/lib/TimeLockUpgrade.sol";
+import { TimeLockUpgrade } from "../../external/SetProtocolContracts/lib/TimeLockUpgrade.sol";
 
 import { DataSourceLinearInterpolationLibrary } from "../lib/DataSourceLinearInterpolationLibrary.sol";
 import { EMALibrary } from "../lib/EMALibrary.sol";
@@ -47,7 +47,7 @@ contract LinearizedEMATimeSeriesFeed is
     uint256 public emaTimePeriod;
 
     // Amount of time after which read interpolates price result, in seconds
-    uint256 public interpolationThreshold; 
+    uint256 public interpolationThreshold;
     string public dataDescription;
     IOracle public oracleInstance;
 

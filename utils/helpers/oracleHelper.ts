@@ -1,9 +1,8 @@
 import * as _ from 'lodash';
 import * as setProtocolUtils from 'set-protocol-utils';
-import { Address } from 'set-protocol-utils';
+import { Address, Blockchain } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
 
-import { Blockchain } from 'set-protocol-contracts';
 import { ether } from '../units';
 
 import {

@@ -3,12 +3,11 @@ require('module-alias/register');
 import * as _ from 'lodash';
 import * as chai from 'chai';
 
-import { Address } from 'set-protocol-utils';
+import { Address, Blockchain } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
 
 import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
-import { Blockchain } from 'set-protocol-contracts';
 
 import {
   DydxConstantPriceOracleMockContract,

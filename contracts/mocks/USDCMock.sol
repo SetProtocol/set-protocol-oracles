@@ -1,7 +1,7 @@
 pragma solidity 0.5.7;
 
 
-import { StandardTokenMock } from "set-protocol-contracts/contracts/mocks/tokens/StandardTokenMock.sol";
+import { StandardTokenMock } from "./StandardTokenMock.sol";
 
 
 contract USDCMock is StandardTokenMock {

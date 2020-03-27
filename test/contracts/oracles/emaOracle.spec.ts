@@ -5,12 +5,11 @@ import * as chai from 'chai';
 import * as ABIDecoder from 'abi-decoder';
 import * as setProtocolUtils from 'set-protocol-utils';
 
-import { Address } from 'set-protocol-utils';
+import { Address, Blockchain } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
 
 import ChaiSetup from '@utils/chaiSetup';
 import { BigNumberSetup } from '@utils/bigNumberSetup';
-import { Blockchain } from 'set-protocol-contracts';
 import { ether } from '@utils/units';
 import {
   EMAOracleContract,

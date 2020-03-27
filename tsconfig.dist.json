@@ -13,14 +13,12 @@
     "typeRoots": [
       "node_modules/@0xproject/types",
       "node_modules/set-protocol-utils/types",
-      "node_modules/set-protocol-contracts/types",
       "node_modules/@types"
     ],
     "paths": {
       "*": [
         "node_modules/@0xproject/types/*",
         "node_modules/set-protocol-utils/types/*",
-        "node_modules/set-protocol-contracts/types/*",
         "node_modules/*"
       ]
     },

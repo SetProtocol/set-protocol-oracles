@@ -18,7 +18,7 @@ pragma solidity 0.5.7;
 pragma experimental "ABIEncoderV2";
 
 import { SafeMath } from "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import { TimeLockUpgrade } from "set-protocol-contracts/contracts/lib/TimeLockUpgrade.sol";
+import { TimeLockUpgrade } from "../external/SetProtocolContracts/lib/TimeLockUpgrade.sol";
 
 import { ITimeSeriesFeed } from "./interfaces/ITimeSeriesFeed.sol";
 import { IMetaOracleV2 } from "./interfaces/IMetaOracleV2.sol";
@@ -30,7 +30,7 @@ import { IMetaOracleV2 } from "./interfaces/IMetaOracleV2.sol";
  *
  * The EMA Oracle is a Proxy library that allows the indexing of existing EMA feeds and the retrieval
  * of addresses using the IMetaOracleV2 interface.
- * 
+ *
  */
 contract EMAOracle is
     TimeLockUpgrade,
@@ -95,7 +95,7 @@ contract EMAOracle is
      * @returns                  EMA value for passed number of EMA time period
      */
     function read(
-        uint256 _emaTimePeriod    
+        uint256 _emaTimePeriod
     )
         external
         view
