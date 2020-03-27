@@ -54,7 +54,7 @@ export const importArtifactsFromSource = (contractName: string) => {
   } catch (e) {}
 
   try {
-    const data = require('set-protocol-oracles/dist/artifacts/ts/' + contractName);
+    const data = require('set-protocol-oracles/build/contracts/' + contractName + '.json');
     instance = contract(data);
     instance.setProvider(web3.currentProvider);
 
@@ -62,7 +62,7 @@ export const importArtifactsFromSource = (contractName: string) => {
   } catch (e) {}
 
   try {
-    const filePath = 'set-protocol-oracles-' + version + '/dist/artifacts/ts/' + contractName;
+    const filePath = 'set-protocol-oracles-' + version + '/build/contracts/' + contractName + '.json';
     const data = require(filePath);
     instance = contract(data);
     instance.setProvider(web3.currentProvider);
