@@ -5,7 +5,6 @@
   "typings": "dist/typings/artifacts/index.d.ts",
   "files": [
     "dist",
-    "build",
     "contracts",
     "migrations",
     "scripts",
