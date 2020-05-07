@@ -9,6 +9,7 @@ export { FeedFactory } from './ts/FeedFactory';
 export { HistoricalPriceFeed } from './ts/HistoricalPriceFeed';
 export { TwoAssetRatioOracle } from './ts/TwoAssetRatioOracle';
 export { LegacyMakerOracleAdapter } from './ts/LegacyMakerOracleAdapter';
+export { LegacyMakerOracleProxy } from './ts/LegacyMakerOracleProxy';
 export { LinearizedEMATimeSeriesFeed } from './ts/LinearizedEMATimeSeriesFeed';
 export { LinearizedPriceDataSource } from './ts/LinearizedPriceDataSource';
 export { Median } from './ts/Median';
@@ -39,6 +40,7 @@ export {
 	HistoricalPriceFeedContract,
 	TwoAssetRatioOracleContract,
 	LegacyMakerOracleAdapterContract,
+	LegacyMakerOracleProxyContract,
 	LinkedListLibraryMockContract,
 	LinearizedEMATimeSeriesFeedContract,
 	LinearizedPriceDataSourceContract,

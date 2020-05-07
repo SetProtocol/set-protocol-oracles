@@ -17,6 +17,8 @@ import {
   HistoricalPriceFeedContract,
   TwoAssetRatioOracleContract,
   LegacyMakerOracleAdapterContract,
+  LegacyMakerOracleProxyContract,
+  LegacyMakerProxyCallerContract,
   LinearizedEMATimeSeriesFeedContract,
   LinearizedPriceDataSourceContract,
   MedianContract,
@@ -54,6 +56,8 @@ const FeedFactory = importArtifactsFromSource('FeedFactory');
 const HistoricalPriceFeed = importArtifactsFromSource('HistoricalPriceFeed');
 const TwoAssetRatioOracle = importArtifactsFromSource('TwoAssetRatioOracle');
 const LegacyMakerOracleAdapter = importArtifactsFromSource('LegacyMakerOracleAdapter');
+const LegacyMakerOracleProxy = importArtifactsFromSource('LegacyMakerOracleProxy');
+const LegacyMakerProxyCaller = importArtifactsFromSource('LegacyMakerProxyCaller');
 const LinearizedEMATimeSeriesFeed = importArtifactsFromSource('LinearizedEMATimeSeriesFeed');
 const LinearizedPriceDataSource = importArtifactsFromSource('LinearizedPriceDataSource');
 const Median = importArtifactsFromSource('Median');
@@ -412,6 +416,21 @@ export class OracleHelper {
     );
   }
 
+  public async deployLegacyMakerOracleProxyAsync(
+    medianizerAddress: Address,
+    from: Address = this._contractOwnerAddress
+  ): Promise<LegacyMakerOracleProxyContract> {
+    const legacyMakerOracleProxy = await LegacyMakerOracleProxy.new(
+      medianizerAddress,
+      txnFrom(from),
+    );
+
+    return new LegacyMakerOracleProxyContract(
+      getContractInstance(legacyMakerOracleProxy),
+      txnFrom(from),
+    );
+  }
+
   public async deployOracleProxyAsync(
     oracleAddress: Address,
     from: Address = this._contractOwnerAddress
@@ -452,6 +471,21 @@ export class OracleHelper {
     );
 
     return new OracleProxyCallerContract(
+      getContractInstance(oracleProxy),
+      txnFrom(from),
+    );
+  }
+
+  public async deployLegacyMakerProxyCallerAsync(
+    oracleAddress: Address,
+    from: Address = this._contractOwnerAddress
+  ): Promise<LegacyMakerProxyCallerContract> {
+    const oracleProxy = await LegacyMakerProxyCaller.new(
+      oracleAddress,
+      txnFrom(from),
+    );
+
+    return new LegacyMakerProxyCallerContract(
       getContractInstance(oracleProxy),
       txnFrom(from),
     );

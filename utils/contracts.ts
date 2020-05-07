@@ -14,6 +14,8 @@ export { FeedFactoryContract } from '../types/generated/feed_factory';
 export { HistoricalPriceFeedContract } from '../types/generated/historical_price_feed';
 export { TwoAssetRatioOracleContract } from '../types/generated/two_asset_ratio_oracle';
 export { LegacyMakerOracleAdapterContract } from '../types/generated/legacy_maker_oracle_adapter';
+export { LegacyMakerOracleProxyContract } from '../types/generated/legacy_maker_oracle_proxy';
+export { LegacyMakerProxyCallerContract } from '../types/generated/legacy_maker_proxy_caller';
 export { LinkedListHelperMockContract } from '../types/generated/linked_list_helper_mock';
 export { LinkedListLibraryMockContract } from '../types/generated/linked_list_library_mock';
 export { LinkedListLibraryMockV2Contract } from '../types/generated/linked_list_library_mock_v2';
