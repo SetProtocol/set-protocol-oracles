@@ -1,5 +1,5 @@
 /*
-    Copyright 2019 Set Labs Inc.
+    Copyright 2020 Set Labs Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ contract LegacyMakerOracleProxy is
      * Reads value of external oracle and passed to Set system. Only authorized addresses are allowed
      * to call read().
      *
-     * @returns         Oracle's uint256 output
+     * @returns         Oracle's bytes32 converted output
      */
     function read()
         external
