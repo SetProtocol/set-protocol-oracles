@@ -2,7 +2,6 @@ require('module-alias/register');
 
 import * as _ from 'lodash';
 import * as chai from 'chai';
-import * as setProtocolUtils from 'set-protocol-utils';
 
 import { Address, Blockchain } from 'set-protocol-utils';
 import { BigNumber } from 'bignumber.js';
@@ -12,10 +11,9 @@ import { BigNumberSetup } from '@utils/bigNumberSetup';
 import { ether } from '@utils/units';
 
 import {
-  LegacyMakerOracleAdapterContract,
   UpdatableOracleMockContract,
-  LegacyMakerProxyCallerContract,
-  LegacyMakerOracleProxyContract,
+  MedianOracleAdapterCallerContract,
+  MedianOracleAdapterContract,
 } from '@utils/contracts';
 import { DEFAULT_GAS } from '@utils/constants';
 import { expectRevertError } from '@utils/tokenAssertions';
@@ -30,9 +28,7 @@ const web3 = getWeb3();
 const { expect } = chai;
 const blockchain = new Blockchain(web3);
 
-const { SetProtocolTestUtils: SetTestUtils } = setProtocolUtils;
-
-contract('LegacyMakerOracleProxy', accounts => {
+contract('MedianOracleAdapter', accounts => {
   const [
     deployerAccount,
     newOracleAccount,
@@ -40,8 +36,8 @@ contract('LegacyMakerOracleProxy', accounts => {
   ] = accounts;
 
   let oracleMock: UpdatableOracleMockContract;
-  let oracleProxy: LegacyMakerOracleProxyContract;
-  let oracleCaller: LegacyMakerProxyCallerContract;
+  let oracleProxy: MedianOracleAdapterContract;
+  let oracleCaller: MedianOracleAdapterCallerContract;
 
   let initialPrice: BigNumber;
 
@@ -55,9 +51,9 @@ contract('LegacyMakerOracleProxy', accounts => {
     oracleMock = await oracleHelper.deployUpdatableOracleMockAsync(initialPrice);
 
     // Deploy LegacyMakerdao oracle proxy
-    oracleProxy = await oracleHelper.deployLegacyMakerOracleProxyAsync(oracleMock.address);
+    oracleProxy = await oracleHelper.deployMedianOracleAdapterAsync(oracleMock.address);
 
-    oracleCaller = await oracleHelper.deployLegacyMakerProxyCallerAsync(oracleProxy.address);
+    oracleCaller = await oracleHelper.deployMedianOracleAdapterCallerAsync(oracleProxy.address);
   });
 
   afterEach(async () => {
@@ -71,8 +67,8 @@ contract('LegacyMakerOracleProxy', accounts => {
       subjectOracleAddress = oracleMock.address;
     });
 
-    async function subject(): Promise<LegacyMakerOracleProxyContract> {
-      return oracleHelper.deployLegacyMakerOracleProxyAsync(
+    async function subject(): Promise<MedianOracleAdapterContract> {
+      return oracleHelper.deployMedianOracleAdapterAsync(
         subjectOracleAddress,
       );
     }
@@ -87,8 +83,6 @@ contract('LegacyMakerOracleProxy', accounts => {
   });
 
   describe('#read', async () => {
-    let subjectCaller: Address;
-
     beforeEach(async () => {
       await oracleProxy.addAuthorizedAddress.sendTransactionAsync(
         oracleCaller.address,

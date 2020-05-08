@@ -20,13 +20,13 @@ pragma experimental "ABIEncoderV2";
 import { IMedian } from "../external/DappHub/interfaces/IMedian.sol";
 
 /**
- * @title LegacyMakerProxyCaller
+ * @title MedianOracleAdapterCaller
  * @author Set Protocol
  *
  * Mock contract used to make sure that the OracleProxy can't be called by unauthorized addresses
  * on chain.
  */
-contract LegacyMakerProxyCaller {
+contract MedianOracleAdapterCaller {
 
     /* ============ State Variables ============ */
     IMedian public oracleAddress;

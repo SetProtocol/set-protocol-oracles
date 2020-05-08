@@ -17,8 +17,8 @@ import {
   HistoricalPriceFeedContract,
   TwoAssetRatioOracleContract,
   LegacyMakerOracleAdapterContract,
-  LegacyMakerOracleProxyContract,
-  LegacyMakerProxyCallerContract,
+  MedianOracleAdapterContract,
+  MedianOracleAdapterCallerContract,
   LinearizedEMATimeSeriesFeedContract,
   LinearizedPriceDataSourceContract,
   MedianContract,
@@ -56,8 +56,8 @@ const FeedFactory = importArtifactsFromSource('FeedFactory');
 const HistoricalPriceFeed = importArtifactsFromSource('HistoricalPriceFeed');
 const TwoAssetRatioOracle = importArtifactsFromSource('TwoAssetRatioOracle');
 const LegacyMakerOracleAdapter = importArtifactsFromSource('LegacyMakerOracleAdapter');
-const LegacyMakerOracleProxy = importArtifactsFromSource('LegacyMakerOracleProxy');
-const LegacyMakerProxyCaller = importArtifactsFromSource('LegacyMakerProxyCaller');
+const MedianOracleAdapter = importArtifactsFromSource('MedianOracleAdapter');
+const MedianOracleAdapterCaller = importArtifactsFromSource('MedianOracleAdapterCaller');
 const LinearizedEMATimeSeriesFeed = importArtifactsFromSource('LinearizedEMATimeSeriesFeed');
 const LinearizedPriceDataSource = importArtifactsFromSource('LinearizedPriceDataSource');
 const Median = importArtifactsFromSource('Median');
@@ -416,16 +416,16 @@ export class OracleHelper {
     );
   }
 
-  public async deployLegacyMakerOracleProxyAsync(
+  public async deployMedianOracleAdapterAsync(
     medianizerAddress: Address,
     from: Address = this._contractOwnerAddress
-  ): Promise<LegacyMakerOracleProxyContract> {
-    const legacyMakerOracleProxy = await LegacyMakerOracleProxy.new(
+  ): Promise<MedianOracleAdapterContract> {
+    const legacyMakerOracleProxy = await MedianOracleAdapter.new(
       medianizerAddress,
       txnFrom(from),
     );
 
-    return new LegacyMakerOracleProxyContract(
+    return new MedianOracleAdapterContract(
       getContractInstance(legacyMakerOracleProxy),
       txnFrom(from),
     );
@@ -476,16 +476,16 @@ export class OracleHelper {
     );
   }
 
-  public async deployLegacyMakerProxyCallerAsync(
+  public async deployMedianOracleAdapterCallerAsync(
     oracleAddress: Address,
     from: Address = this._contractOwnerAddress
-  ): Promise<LegacyMakerProxyCallerContract> {
-    const oracleProxy = await LegacyMakerProxyCaller.new(
+  ): Promise<MedianOracleAdapterCallerContract> {
+    const oracleProxy = await MedianOracleAdapterCaller.new(
       oracleAddress,
       txnFrom(from),
     );
 
-    return new LegacyMakerProxyCallerContract(
+    return new MedianOracleAdapterCallerContract(
       getContractInstance(oracleProxy),
       txnFrom(from),
     );

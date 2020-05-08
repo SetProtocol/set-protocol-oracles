@@ -22,13 +22,13 @@ import { IOracle } from "../interfaces/IOracle.sol";
 
 
 /**
- * @title LegacyMakerOracleProxy
+ * @title MedianOracleAdapter
  * @author Set Protocol
  *
  * Permissioned oracle proxy that is intended to replicate the interface of the MakerDAO Legacy IMedian
  * oracle that returns bytes32 values.
  */
-contract LegacyMakerOracleProxy is
+contract MedianOracleAdapter is
     Authorizable
 {
 
@@ -58,7 +58,7 @@ contract LegacyMakerOracleProxy is
     /* ============ External ============ */
 
     /*
-     * Reads value of external oracle and passed to Set system. Only authorized addresses are allowed
+     * Reads value of IOracle and returns bytes32 result. Only authorized addresses are allowed
      * to call read().
      *
      * @returns         Oracle's bytes32 converted output
@@ -88,7 +88,7 @@ contract LegacyMakerOracleProxy is
         // Check to make sure new oracle address is passed
         require(
             address(_newOracleAddress) != address(oracleInstance),
-            "LegacyMakerOracleProxy.changeOracleAddress: Must give new oracle address."
+            "MedianOracleAdapter.changeOracleAddress: Must give new oracle address."
         );
 
         // Set new Oracle instance
