@@ -17,6 +17,8 @@ import {
   HistoricalPriceFeedContract,
   TwoAssetRatioOracleContract,
   LegacyMakerOracleAdapterContract,
+  MedianOracleAdapterContract,
+  MedianOracleAdapterCallerContract,
   LinearizedEMATimeSeriesFeedContract,
   LinearizedPriceDataSourceContract,
   MedianContract,
@@ -54,6 +56,8 @@ const FeedFactory = importArtifactsFromSource('FeedFactory');
 const HistoricalPriceFeed = importArtifactsFromSource('HistoricalPriceFeed');
 const TwoAssetRatioOracle = importArtifactsFromSource('TwoAssetRatioOracle');
 const LegacyMakerOracleAdapter = importArtifactsFromSource('LegacyMakerOracleAdapter');
+const MedianOracleAdapter = importArtifactsFromSource('MedianOracleAdapter');
+const MedianOracleAdapterCaller = importArtifactsFromSource('MedianOracleAdapterCaller');
 const LinearizedEMATimeSeriesFeed = importArtifactsFromSource('LinearizedEMATimeSeriesFeed');
 const LinearizedPriceDataSource = importArtifactsFromSource('LinearizedPriceDataSource');
 const Median = importArtifactsFromSource('Median');
@@ -412,6 +416,21 @@ export class OracleHelper {
     );
   }
 
+  public async deployMedianOracleAdapterAsync(
+    medianizerAddress: Address,
+    from: Address = this._contractOwnerAddress
+  ): Promise<MedianOracleAdapterContract> {
+    const legacyMakerOracleProxy = await MedianOracleAdapter.new(
+      medianizerAddress,
+      txnFrom(from),
+    );
+
+    return new MedianOracleAdapterContract(
+      getContractInstance(legacyMakerOracleProxy),
+      txnFrom(from),
+    );
+  }
+
   public async deployOracleProxyAsync(
     oracleAddress: Address,
     from: Address = this._contractOwnerAddress
@@ -452,6 +471,21 @@ export class OracleHelper {
     );
 
     return new OracleProxyCallerContract(
+      getContractInstance(oracleProxy),
+      txnFrom(from),
+    );
+  }
+
+  public async deployMedianOracleAdapterCallerAsync(
+    oracleAddress: Address,
+    from: Address = this._contractOwnerAddress
+  ): Promise<MedianOracleAdapterCallerContract> {
+    const oracleProxy = await MedianOracleAdapterCaller.new(
+      oracleAddress,
+      txnFrom(from),
+    );
+
+    return new MedianOracleAdapterCallerContract(
       getContractInstance(oracleProxy),
       txnFrom(from),
     );

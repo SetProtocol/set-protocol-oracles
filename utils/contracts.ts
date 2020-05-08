@@ -21,6 +21,8 @@ export { LinkedListLibraryMockV3Contract } from '../types/generated/linked_list_
 export { LinearizedEMATimeSeriesFeedContract } from '../types/generated/linearized_e_m_a_time_series_feed';
 export { LinearizedPriceDataSourceContract } from '../types/generated/linearized_price_data_source';
 export { MedianContract } from '../types/generated/median';
+export { MedianOracleAdapterContract } from '../types/generated/median_oracle_adapter';
+export { MedianOracleAdapterCallerContract } from '../types/generated/median_oracle_adapter_caller';
 export { MovingAverageOracleContract } from '../types/generated/moving_average_oracle';
 export { MovingAverageOracleV2Contract } from '../types/generated/moving_average_oracle_v2';
 export { MovingAverageOracleV1ProxyContract } from '../types/generated/moving_average_oracle_v1_proxy';
