@@ -8,6 +8,7 @@ import { ether } from '../units';
 import {
   ChainlinkAggregatorMockContract,
   ChainlinkOracleAdapterContract,
+  ChainlinkOracleAdapterV2Contract,
   ConstantPriceOracleContract,
   CTokenOracleContract,
   DydxConstantPriceOracleMockContract,
@@ -47,6 +48,7 @@ const web3 = getWeb3();
 
 const ChainlinkAggregatorMock = importArtifactsFromSource('ChainlinkAggregatorMock');
 const ChainlinkOracleAdapter = importArtifactsFromSource('ChainlinkOracleAdapter');
+const ChainlinkOracleAdapterV2 = importArtifactsFromSource('ChainlinkOracleAdapterV2');
 const ConstantPriceOracle = importArtifactsFromSource('ConstantPriceOracle');
 const CTokenOracle = importArtifactsFromSource('CTokenOracle');
 const DydxConstantPriceOracleMock = importArtifactsFromSource('DydxConstantPriceOracleMock');
@@ -573,6 +575,23 @@ export class OracleHelper {
     );
 
     return new ChainlinkOracleAdapterContract(
+      getContractInstance(oracleAdapter),
+      txnFrom(from),
+    );
+  }
+
+  public async deployChainlinkOracleAdapterV2Async(
+    oracle: Address,
+    multiplierDecimals: BigNumber,
+    from: Address = this._contractOwnerAddress
+  ): Promise<ChainlinkOracleAdapterV2Contract> {
+    const oracleAdapter = await ChainlinkOracleAdapterV2.new(
+      oracle,
+      multiplierDecimals,
+      txnFrom(from),
+    );
+
+    return new ChainlinkOracleAdapterV2Contract(
       getContractInstance(oracleAdapter),
       txnFrom(from),
     );
