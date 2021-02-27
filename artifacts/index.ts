@@ -1,5 +1,6 @@
 export { ChainlinkAggregatorMock } from './ts/ChainlinkAggregatorMock';
 export { ChainlinkOracleAdapter } from './ts/ChainlinkOracleAdapter';
+export { ChainlinkOracleAdapterV2 } from './ts/ChainlinkOracleAdapterV2';
 export { ConstantPriceOracle } from './ts/ConstantPriceOracle';
 export { CTokenOracle } from './ts/CTokenOracle';
 export { DydxOracleAdapter } from './ts/DydxOracleAdapter';
@@ -31,6 +32,7 @@ export {
 	BaseContract,
 	ChainlinkAggregatorMockContract,
 	ChainlinkOracleAdapterContract,
+	ChainlinkOracleAdapterV2Contract,
 	ConstantPriceOracleContract,
 	CTokenOracleContract,
 	DydxOracleAdapterContract,

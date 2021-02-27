@@ -1,6 +1,6 @@
 {
   "name": "set-protocol-oracles",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "main": "dist/artifacts/index.js",
   "typings": "dist/typings/artifacts/index.d.ts",
   "files": [
