@@ -1,6 +1,7 @@
 export { BaseContract } from '../types/base_contract';
 export { ChainlinkAggregatorMockContract } from '../types/generated/chainlink_aggregator_mock';
 export { ChainlinkOracleAdapterContract } from '../types/generated/chainlink_oracle_adapter';
+export { ChainlinkOracleAdapterV2Contract } from '../types/generated/chainlink_oracle_adapter_v2';
 export { ConstantPriceOracleContract } from '../types/generated/constant_price_oracle';
 export { CTokenOracleContract } from '../types/generated/c_token_oracle';
 export {
